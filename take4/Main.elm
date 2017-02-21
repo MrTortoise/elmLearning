@@ -15,7 +15,6 @@ type Msg
  | Collapse
 
 -- view
-
 view : Model -> Html Msg
 view model =
   if model then

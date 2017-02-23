@@ -9,7 +9,7 @@ import Player.List
 view : Model -> Html Msg
 view model =
     div []
-        [ text model ]
+        [ page model ]
 
 
 page : Model -> Html Msg

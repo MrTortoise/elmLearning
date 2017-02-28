@@ -5,7 +5,7 @@ import Html.Attributes exposing (class, href)
 import Msgs exposing (Msg)
 import Models exposing (Player)
 import RemoteData exposing (WebData)
-import Routing exposing (playerPath)
+import Routing exposing (playerPath, createPlayerPath)
 
 
 view : WebData (List Player) -> Html Msg
@@ -13,6 +13,7 @@ view response =
     div []
         [ nav
         , maybeList response
+        , createPlayerBtn
         ]
 
 
@@ -76,3 +77,12 @@ editBtn player =
             , href path
             ]
             [ i [ class "fa fa-pencil mr1" ] [], text "Edit" ]
+
+
+createPlayerBtn : Html Msg
+createPlayerBtn =
+    a
+        [ class "btn regular"
+        , href createPlayerPath
+        ]
+        [ i [ class "fa fa-plus mr1" ] [], text "Create Player" ]

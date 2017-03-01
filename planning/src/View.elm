@@ -5,6 +5,7 @@ import Models exposing (Model, PlayerId, Player)
 import Msgs exposing (Msg)
 import Player.Edit
 import Player.List
+import Player.Create
 import RemoteData
 
 
@@ -22,6 +23,9 @@ page model =
 
         Models.PlayerRoute id ->
             playerEditPage model id
+
+        Models.CreatePlayerRoute ->
+            Player.Create.view
 
         Models.NotFoundRoute ->
             notFoundView

@@ -11,6 +11,7 @@ matchers =
         [ map PlayersRoute top
         , map PlayerRoute (s "players" </> string)
         , map PlayersRoute (s "players")
+        , map CreatePlayerRoute (s "create")
         ]
 
 
